@@ -1,0 +1,10 @@
+title: Identifier
+fields:
+  -
+    handle: identifier
+    field:
+      type: text
+      display: Identifier
+      instructions: 'id elemen (tanpa spasi).'
+      validate:
+        - required

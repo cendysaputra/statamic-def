@@ -1,0 +1,16 @@
+title: 'Social media'
+fields:
+  -
+    handle: url
+    field:
+      type: slug
+      display: URL
+      width: 50
+  -
+    handle: icon
+    field:
+      container: assets
+      max_files: 1
+      type: assets
+      display: Icon
+      width: 50

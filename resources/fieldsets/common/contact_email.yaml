@@ -1,0 +1,14 @@
+title: 'Contact email'
+fields:
+  -
+    handle: label
+    field:
+      type: text
+      display: Label
+      width: 50
+  -
+    handle: email
+    field:
+      type: text
+      display: Email
+      width: 50

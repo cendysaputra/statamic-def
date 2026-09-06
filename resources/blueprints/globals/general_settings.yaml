@@ -1,0 +1,145 @@
+title: 'General Settings'
+tabs:
+  brand:
+    display: Brand
+    sections:
+      -
+        display: 'Web identity'
+        instructions: 'informasi nama, logo, ikon situs.'
+        fields:
+          -
+            handle: site_title
+            field:
+              type: text
+              display: 'Site title'
+              validate:
+                - required
+          -
+            handle: site_logo
+            field:
+              type: assets
+              display: 'Site logo'
+              container: assets
+              max_files: 1
+              mode: grid
+              validate:
+                - required
+                - image
+          -
+            handle: favicon
+            field:
+              type: assets
+              display: Favicon
+              instructions: 'ukuran 500x500px.'
+              container: assets
+              max_files: 1
+              mode: grid
+              validate:
+                - required
+                - image
+  contact:
+    display: Contact
+    sections:
+      -
+        display: 'Contact information'
+        instructions: 'daftar telepon, email. alamat.'
+        fields:
+          -
+            handle: phone_numbers
+            field:
+              type: replicator
+              display: 'Phone numbers'
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    phone_number:
+                      display: 'Phone number'
+                      fields:
+                        -
+                          import: common.contact_phone
+          -
+            handle: emails
+            field:
+              type: replicator
+              display: Emails
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    emails:
+                      display: Emails
+                      fields:
+                        -
+                          import: common.contact_email
+          -
+            handle: address
+            field:
+              type: replicator
+              display: Address
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    address:
+                      display: Address
+                      fields:
+                        -
+                          import: common.address
+  social_media:
+    display: 'Social media'
+    sections:
+      -
+        display: 'Social media'
+        instructions: 'tautan akun media sosial.'
+        fields:
+          -
+            handle: social_media
+            field:
+              max_sets: 5
+              type: replicator
+              display: 'Social media'
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    social_media:
+                      display: 'Social media'
+                      fields:
+                        -
+                          import: common.social_media
+  code:
+    display: Code
+    sections:
+      -
+        display: 'Global script'
+        instructions: 'kode tambahan pada website.'
+        fields:
+          -
+            handle: header_code
+            field:
+              mode_selectable: false
+              show_mode_label: false
+              type: code
+              display: 'Header code'
+          -
+            handle: body_code
+            field:
+              mode_selectable: false
+              show_mode_label: false
+              type: code
+              display: 'Body code'
+          -
+            handle: footer_code
+            field:
+              mode_selectable: false
+              show_mode_label: false
+              type: code
+              display: 'Footer code'
+          -
+            handle: google_analytics
+            field:
+              placeholder: G-000000000
+              type: text
+              display: 'Google Analytics'
+              instructions: 'measurement id.'

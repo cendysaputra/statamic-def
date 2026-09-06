@@ -1,0 +1,14 @@
+title: Address
+fields:
+  -
+    handle: address
+    field:
+      type: text
+      display: Address
+      width: 50
+  -
+    handle: google_maps_link
+    field:
+      type: slug
+      display: 'Google maps link'
+      width: 50

@@ -1,0 +1,14 @@
+title: 'Contact phone'
+fields:
+  -
+    handle: label
+    field:
+      type: text
+      display: Label
+      width: 50
+  -
+    handle: phone_numbers
+    field:
+      type: text
+      display: 'Phone numbers'
+      width: 50

@@ -1,0 +1,15 @@
+title: 'Section settings'
+fields:
+  -
+    handle: anchor
+    field:
+      type: text
+      display: 'Anchor ID'
+      instructions: 'id anchor (opsional).'
+  -
+    handle: show
+    field:
+      default: true
+      type: toggle
+      display: Show
+      instructions: 'tampilkan/sembunyikan section.'
