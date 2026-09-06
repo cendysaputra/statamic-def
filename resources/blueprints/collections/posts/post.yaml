@@ -18,28 +18,18 @@ tabs:
               container: assets
               max_files: 1
               type: assets
-              display: 'Featured image'
-              instructions: 'gambar utama halaman.'
+              display: 'Featured Image'
+              instructions: 'gambar utama.'
               validate:
                 - image
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Excerpt
+              instructions: 'ringkasan konten.'
       -
         display: Content
-        fields:
-          -
-            handle: sections
-            field:
-              button_label: 'Add section'
-              type: replicator
-              display: Sections
-              sets:
-                main:
-                  display: Main
-                  sets:
-                    new_set:
-                      display: 'New Set'
-                      fields: {}
-      -
-        display: 'Simple content'
         fields:
           -
             handle: description
@@ -49,9 +39,12 @@ tabs:
                 - h3
                 - h4
                 - h5
-                - bold
                 - h6
+                - bold
                 - italic
+                - underline
+                - strikethrough
+                - small
                 - unorderedlist
                 - orderedlist
                 - removeformat
@@ -59,16 +52,9 @@ tabs:
                 - anchor
                 - image
                 - table
-                - underline
-                - strikethrough
-                - small
                 - superscript
                 - subscript
                 - horizontalrule
-                - alignleft
-                - aligncenter
-                - alignright
-                - alignjustify
               container: assets
               remove_empty_nodes: false
               type: bard
@@ -85,20 +71,21 @@ tabs:
               localizable: true
               validate: 'max:200'
           -
-            handle: parent_page
+            handle: categories
             field:
-              collections:
-                - pages
-              max_items: 1
-              type: entries
-              display: 'Parent Page'
-              instructions: 'halaman induk.'
+              type: terms
+              taxonomies:
+                - categories
+              display: Categories
+              mode: select
           -
-            handle: template
+            handle: tags
             field:
-              type: template
-              display: Template
-              instructions: 'blueprint tampilan halaman.'
+              type: terms
+              taxonomies:
+                - tags
+              display: Tags
+              mode: select
           -
             handle: date
             field:
@@ -107,4 +94,4 @@ tabs:
               default: now
               validate:
                 - required
-title: Page
+title: Post

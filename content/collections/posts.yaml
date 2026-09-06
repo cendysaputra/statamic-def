@@ -2,6 +2,9 @@ title: Posts
 icon: collections
 template: default
 layout: layout
+taxonomies:
+  - categories
+  - tags
 revisions: false
 route: '/blog/{slug}'
 date: true
