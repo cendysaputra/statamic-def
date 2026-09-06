@@ -1,0 +1,108 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Head
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: featured_image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Featured image'
+              instructions: 'gambar utama halaman.'
+      -
+        display: Content
+        fields:
+          -
+            handle: sections
+            field:
+              button_label: 'Add section'
+              type: replicator
+              display: Sections
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields: {}
+      -
+        display: 'Simple content'
+        fields:
+          -
+            handle: description
+            field:
+              buttons:
+                - h2
+                - h3
+                - h4
+                - h5
+                - bold
+                - h6
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - underline
+                - strikethrough
+                - small
+                - superscript
+                - subscript
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              container: assets
+              remove_empty_nodes: false
+              type: bard
+              display: Description
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent_page
+            field:
+              collections:
+                - pages
+              max_items: 1
+              type: entries
+              display: 'Parent Page'
+              instructions: 'halaman induk.'
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              instructions: 'blueprint tampilan halaman.'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+title: Page
